@@ -11,17 +11,17 @@ const editButton = document.querySelector('.profile__edit-button');
 const addButton = document.querySelector('.profile__add-button');
 
 const popups = document.querySelectorAll('.popup');
-const editPopup = document.querySelector('.popup_type_edit');
-const addPopup = document.querySelector('.popup_type_new-card');
+const popupEditProfile = document.querySelector('.popup_type_edit');
+const popupAddCard = document.querySelector('.popup_type_new-card');
 const cardPopup = document.querySelector('.popup_type_image');
 const cardPopupImage = cardPopup.querySelector('.popup__image');
 const cardPopupCaption = cardPopup.querySelector('.popup__caption');
 
-const profileForm = editPopup.querySelector('.popup__form');
+const profileForm = popupEditProfile.querySelector('.popup__form');
 const profileNameInput = profileForm.querySelector('.popup__input_type_name');
 const profileJobInput = profileForm.querySelector('.popup__input_type_description');
 
-const cardForm = addPopup.querySelector('.popup__form');
+const cardForm = popupAddCard.querySelector('.popup__form');
 const cardName = cardForm.querySelector('.popup__input_type_card-name');
 const cardLink = cardForm.querySelector('.popup__input_type_url');
 
@@ -39,7 +39,7 @@ const handleProfileFormSubmit = (evt) => {
   profileName.textContent = profileNameInput.value;
   profileJob.textContent = profileJobInput.value;
 
-  closePopup(document.querySelector('.popup_is-opened'));
+  closePopup(popupEditProfile);
 }
 
 const handleCardFormSubmit = (evt) => {
@@ -52,7 +52,7 @@ const handleCardFormSubmit = (evt) => {
 
   cardsList.prepend(createCard(newCard, deleteCard, likeCard, openCardPopup));
   evt.currentTarget.reset();
-  closePopup(document.querySelector('.popup_is-opened'));
+  closePopup(popupAddCard);
 }
 
 initialCards.forEach(element => {
@@ -62,11 +62,11 @@ initialCards.forEach(element => {
 editButton.addEventListener('click', () => {
   profileNameInput.value = profileName.textContent;
   profileJobInput.value = profileJob.textContent; 
-  openPopup(editPopup);
+  openPopup(popupEditProfile);
 });
 
 addButton.addEventListener('click', () => {
-  openPopup(addPopup);
+  openPopup(popupAddCard);
 });
 
 popups.forEach(popup => {
