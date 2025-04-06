@@ -1,0 +1,10 @@
+.popup__error {
+  display: none;
+  position: absolute;
+  left: 0;
+  top: 100%;
+  z-index: 3;
+  margin-top: 5px;
+  color: #FF0000;
+  font-size: 12px;
+}
