@@ -118,8 +118,9 @@ const handleProfileFormSubmit = async (evt) => {
     closePopup(profileEditPopup);
   } catch (err) {
     showError(err);
+  } finally {
+    renderLoading(submitButton, false);
   }
-  renderLoading(submitButton, false);
 };
 
 const handleCardFormSubmit = async (evt) => {
@@ -143,8 +144,9 @@ const handleCardFormSubmit = async (evt) => {
     closePopup(cardAddPopup);
   } catch (err) {
     showError(err);
+  } finally {
+    renderLoading(submitButton, false);
   }
-  renderLoading(submitButton, false);
 };
 
 const handleAvatarFormSubmit = async (evt) => {
@@ -159,8 +161,9 @@ const handleAvatarFormSubmit = async (evt) => {
     closePopup(avatarEditPopup);
   } catch (err) {
     console.log(err);
+  } finally {
+    renderLoading(submitButton, false);
   }
-  renderLoading(submitButton, false);
 };
 
 // Event Listeners
